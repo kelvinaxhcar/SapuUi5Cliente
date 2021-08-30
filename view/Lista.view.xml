@@ -1,0 +1,39 @@
+<mvc:View controllerName="invent.clientes.controller.Lista"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page showNavButton="true" navButtonPress=".onNavBack" title="Lista de clientes">
+		<Table items="{
+			path : 'invoice>/Invoices',
+			sorter : {
+				path : 'ShipperName'
+			}
+		}">
+			<headerToolbar>
+
+			</headerToolbar>
+			<columns>
+				<Column>
+					<Text text="Codigo" />
+				</Column>
+				<Column>
+					<Text text="Nome" />
+				</Column>
+				<Column>
+					<Text text="CPF" />
+				</Column>
+
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle" type="Navigation" press="onPress">
+					<cells>
+						<Text text="{invoice>Codigo}" wrapping="false" />
+						<Text text="{invoice>Nome}" wrapping="false"/>
+						<Text text="{invoice>Cpf}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+	</Page>
+
+</mvc:View>
